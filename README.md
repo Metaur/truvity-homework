@@ -4,6 +4,20 @@
 
 ## How to build and run
 
+```
+go build -o ./build/ ./... 
+
+./build/web-crawler -output=. -url=https://go.dev/ -depth=5
+```
+
+## TODO
+
+- Concurrent crawling
+- Resume functionality
+
+For concurrent crawling might need to add a channel for urls to be processed, which could be handled by multiple goroutines.
+As for resuming the processing, it may require to check existing files, scan for links, hydrate the internal state and download only missing pages. 
+
 ## Assignment: Implement a recursive, mirroring web crawler
 
 The crawler should be a command-line tool that accepts a starting URL and a
